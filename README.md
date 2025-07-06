@@ -73,12 +73,13 @@ Display: Whenever new data arrives from the robot, the dashboard automatically u
 This creates a seamless flow of information from the physical robot to a remote monitoring interface.
 
 # Contributors ✨
-![github](https://github.com/user-attachments/assets/1f5a4776-324a-449e-a187-563b1d0a8a3b)https://github.com/itsvinz23,
-
-![github](https://github.com/user-attachments/assets/1f5a4776-324a-449e-a187-563b1d0a8a3b)https://github.com/cha0005,
-
-![github](https://github.com/user-attachments/assets/1f5a4776-324a-449e-a187-563b1d0a8a3b)https://github.com/JayDeRukz,
-
-![github](https://github.com/user-attachments/assets/1f5a4776-324a-449e-a187-563b1d0a8a3b)https://github.com/Ravindurrl,
-
-![github](https://github.com/user-attachments/assets/1f5a4776-324a-449e-a187-563b1d0a8a3b)https://github.com/TharushiNK,
+![icon-github-28](https://github.com/user-attachments/assets/29499bac-2906-4b21-9f11-506324416075)
+https://github.com/itsvinz23,
+![icon-github-28](https://github.com/user-attachments/assets/29499bac-2906-4b21-9f11-506324416075)
+https://github.com/cha0005,
+![icon-github-28](https://github.com/user-attachments/assets/29499bac-2906-4b21-9f11-506324416075)
+https://github.com/JayDeRukz,
+![icon-github-28](https://github.com/user-attachments/assets/29499bac-2906-4b21-9f11-506324416075)
+https://github.com/Ravindurrl,
+![icon-github-28](https://github.com/user-attachments/assets/29499bac-2906-4b21-9f11-506324416075)
+https://github.com/TharushiNK,
