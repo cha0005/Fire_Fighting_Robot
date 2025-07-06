@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire-Fighting Robot Dashboard</title>
+  <!-- Link to Google Fonts for 'Inter' -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Main Container for the entire dashboard -->
+  <div class="main-container">
+    <!-- Top Navbar/Header Section -->
+    <nav class="header">
+      <h1 class="main-title">Fire-Fighting Robot</h1>
+      <p class="subtitle">Monitoring and Controlling Fire Hazards</p>
+    </nav>
+
+    <!-- Dashboard Cards Grid -->
+    <div class="dashboard-grid">
+
+      <!-- System Status Card (Full Width) -->
+      <div class="card system-status-card">
+        <div class="card-content">
+          <h3 class="card-title">System Status</h3>
+          <div id="system-status" class="status normal">Normal</div>
+        </div>
+        <div class="card-icon">
+          <!-- System Status Icon (Network/Connectivity) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Temperature Card -->
+      <div class="card sensor-card temperature-card">
+        <div class="card-icon">
+          <!-- Temperature Icon (Thermometer with Flame) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 11 6 11s6-6.5 6-11c0-3.31-2.69-6-6-6zm0 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM12 20c-1.33 0-2.58-.55-3.54-1.51L12 11.46l3.54 7.03C14.58 19.45 13.33 20 12 20z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Temperature</h3>
+          <div id="temperature-value" class="sensor-value">-- °C</div>
+        </div>
+      </div>
+
+      <!-- Humidity Card -->
+      <div class="card sensor-card humidity-card">
+        <div class="card-icon">
+          <!-- Humidity Icon (Water Drops) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-3.09 1.71-5.78 4.25-7.24L12 2l3.75 2.76C20.29 6.22 22 8.91 22 12c0 4.41-3.59 8-8 8z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Humidity</h3>
+          <div id="humidity-value" class="sensor-value">-- %</div>
+        </div>
+      </div>
+
+      <!-- Water in Tank Card -->
+      <div class="card sensor-card water-tank-card">
+        <div class="card-icon">
+          <!-- Water Tank Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 18H5c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1zM7 10h10v2H7zM7 14h10v2H7z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Water in Tank</h3>
+          <div id="water-status" class="sensor-value">--</div>
+        </div>
+      </div>
+
+      <!-- Fire Distance Card -->
+      <div class="card sensor-card fire-distance-card">
+        <div class="card-icon">
+          <!-- Fire Distance Icon (Map Pin) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Fire Distance</h3>
+          <div id="fire-distance-value" class="sensor-value">-- m</div>
+        </div>
+      </div>
+
+<!-- COMMENTED OUT: Flame Detected Card -->
+      <!--
+      <div class="card sensor-card flame-detection-card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.5 1c-2.48 0-4.5 2.02-4.5 4.5 0 1.7.94 3.2 2.34 4.02L12 22l.16-.02c1.4-.82 2.34-2.32 2.34-4.02 0-2.48-2.02-4.5-4.5-4.5zm0-2c3.59 0 6.5 2.91 6.5 6.5 0 2.27-1.16 4.29-2.94 5.46L12 24l-6.56-11.04C5.16 10.79 4 8.77 4 6.5 4 2.91 6.91 0 10.5 0z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Flame Detected</h3>
+          <div id="flame-status" class="sensor-value">--</div>
+        </div>
+      </div>
+      -->
+
+      <!-- COMMENTED OUT: Emergency Card (Red, with Button) -->
+      <!--
+      <div class="card emergency-card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.5 1c-2.48 0-4.5 2.02-4.5 4.5 0 1.7.94 3.2 2.34 4.02L12 22l.16-.02c1.4-.82 2.34-2.32 2.34-4.02 0-2.48-2.02-4.5-4.5-4.5zm0-2c3.59 0 6.5 2.91 6.5 6.5 0 2.27-1.16 4.29-2.94 5.46L12 24l-6.56-11.04C5.16 10.79 4 8.77 4 6.5 4 2.91 6.91 0 10.5 0z"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Emergency</h3>
+          <button id="activate-emergency" class="activate-button">ACTIVATE</button>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </div>
+
+</body>
+</html>

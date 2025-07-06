@@ -1,0 +1,212 @@
+/* General Body Styles */
+body {
+  font-family: 'Inter', sans-serif; /* Using Inter font as requested */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0f2f7, #c1d9e2); /* Light blue/purple gradient */
+  color: #333;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Main Container for overall layout */
+.main-container {
+  width: 100%;
+  max-width: 800px; /* Max width for larger screens */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header/Navbar Styles */
+.header {
+  background: linear-gradient(to right, #a7d9f7, #8bbbe5); /* Lighter blue/purple gradient */
+  color: #2c3e50; /* Darker text for contrast */
+  padding: 25px 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .main-title {
+  font-size: 2.5rem; /* Larger title */
+  font-weight: 700; /* Bold */
+  margin: 0;
+  letter-spacing: 1px;
+  color: #212121;
+}
+
+.header .subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between cards */
+}
+
+/* Card Base Styles */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px; /* Ensure cards have a minimum height */
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* System Status Card Specific Styles */
+.system-status-card {
+  grid-column: 1 / -1; /* Spans full width */
+  display: flex;
+  flex-direction: row; /* Icon and text side-by-side */
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background: #e6f7ff; /* Light blue background */
+  border: 1px solid #b3e0ff;
+}
+
+.system-status-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.system-status-card .status {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745; /* Green for normal */
+}
+
+.system-status-card .status.alert {
+  color: #dc3545; /* Red for alert */
+}
+
+.system-status-card .card-icon {
+  width: 50px;
+  height: 50px;
+  color: #007bff; /* Blue icon color */
+}
+
+/* Sensor Card General Styles */
+.sensor-card .card-icon {
+  width: 60px; /* Larger icons for sensor cards */
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.sensor-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.sensor-card .sensor-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007bff; /* Default blue for values */
+}
+
+/* Specific Sensor Card Icon Colors */
+.temperature-card .card-icon { color: #ff6347; } /* Tomato red */
+.humidity-card .card-icon { color: #00bcd4; } /* Cyan */
+.water-tank-card .card-icon { color: #2196f3; } /* Blue */
+.fire-distance-card .card-icon { color: #4caf50; } /* Green */
+.flame-detection-card .card-icon { color: #ff5722; } /* Deep Orange */
+
+/* Sensor Value Status Colors (dynamic from JS) */
+.sensor-value.alert {
+  color: #dc3545; /* Red for critical alerts */
+}
+
+.sensor-value.warning {
+  color: #ffc107; /* Orange for warnings */
+}
+
+.sensor-value.normal {
+  color: #28a745; /* Green for normal states */
+}
+
+/* Emergency Card Styles */
+.emergency-card {
+  background: linear-gradient(to bottom right, #dc3545, #c82333); /* Red gradient */
+  color: white;
+  padding: 30px 20px;
+  grid-column: span 1; /* Adjust if it needs to span more columns */
+}
+
+.emergency-card .card-icon {
+  width: 70px; /* Larger icon for emergency */
+  height: 70px;
+  color: white; /* White icon */
+  margin-bottom: 15px;
+}
+
+.emergency-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.emergency-card .activate-button {
+  background: #ffc107; /* Yellow/Orange button */
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.emergency-card .activate-button:hover {
+  background: #e0a800; /* Darker yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header .main-title {
+    font-size: 2rem;
+  }
+  .header .subtitle {
+    font-size: 1rem;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+  .system-status-card {
+    flex-direction: column; /* Stack icon and text on small screens */
+  }
+  .system-status-card .card-icon {
+    margin-bottom: 10px;
+  }
+}
